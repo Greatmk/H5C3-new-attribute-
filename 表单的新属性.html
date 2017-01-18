@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- placeholder 占位文本 -->
+	<!-- autofocus 自动获取焦点  可以通过js的原生方法focus去做到-->
+	<!-- autocomplete 自动补全 默认就存在的 有两个基本前提：要有name属性 必须提交一次 -->
+	<!-- form表单在提交的时候里面的input一定要有name属性 -->
+	<!-- form 属性 可以通过跟form表单的id值产生绑定，那么这个input可以在任何位置都能被提交出去 不推荐使用-->
+	<!-- multiple 配合file控件可以实现多选提交 file默认是只能单选-->
+	<form action="1.php" id="myform">
+		<!-- <input type="text" placeholder="请输入。。。">
+		<input type="text" id="focus">
+		
+		<input type="text" autocomplete>
+		<br>
+		<br>
+		<input type="submit" value="提交"> -->
+
+		<input type="text" name="嘻嘻" >
+
+		<input type="file" multiple name="" id="">
+
+		<input type="submit" value="提交">
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById('focus').focus();
+	</script>
+</body>
+</html>

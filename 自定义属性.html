@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 121px;
+			height: 140px;
+			margin: 50px auto 0;
+			border: 1px solid #000;
+		}
+		.info{
+			width: 300px;
+			height: 50px;
+			margin: 10px auto;
+			border: 1px solid #000;
+		}
+		.btn_wrap{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="info"></div>
+	<div class="btn_wrap">
+		<button data-path="img/ldh.jpg" data-info="不老男神，好好崇拜">刘德华</button>
+		<button data-path="img/zjl.jpg" data-info="哎呀，不错哟！！！">周杰伦</button>
+		<button data-path="img/zly.jpg" data-info="想唱就唱！！">张靓颖</button>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	// 获取元素
+	var btn = document.querySelectorAll('button');
+	var box = document.querySelector('.box');
+	var info = document.querySelector('.info');
+
+	for(var i = 0; i < btn.length; i++){
+		btn[i].addEventListener('click', function (argument) {
+			// 点击的时候获取当前对象下面的data属性里面的值
+			var path = this.dataset['path'];
+			var myInfo = this.dataset['info'];
+			box.style.background = 'url('+path+')';
+			info.innerHTML = myInfo;
+		})
+	}
+
+	/*$(function(){
+		var btn = document.querySelectorAll('button');
+		for(var i = 0; i < btn.length; i++){
+			$('.btn_wrap button').eq(i).on('click',function(){
+				console.log(1);
+				// 点击的时候获取当前对象下面的data属性里面的值
+				var path = $(this).data('path');
+				var myInfo = $(this).data('info');
+				$('.box').css('background','url('+path+')');
+				$('.info').html(myInfo);
+			})	
+		}
+	})
+*/
+	</script>
+</body>
+</html>

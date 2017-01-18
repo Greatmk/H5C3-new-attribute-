@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#error{
+			padding: 10px 5px;
+			border: 1px solid #000;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- email会自动在提交的时候自动验证表单里面的值是否是一个合法的邮箱 -->
+	<!-- url 自动在提交的时候自动验证表单里面的值是否是一个合法的网址，需要带上Http -->
+	<!-- required 非空验证 -->
+	<!-- pattern  自定义验证规则 接受正则 -->
+	<form action="1.php">
+		<!-- 邮箱：<input type="email" required>
+		<br>
+		<br>
+		<br>
+		网址：<input type="url" required name="" id=""> -->
+		
+		手机号: <input id="tel" type="text" >
+		<span id="error"></span>
+		<input type="submit" value="提交">
+	</form>
+	<script type="text/javascript">
+	var tel = document.getElementById('tel');
+	var error = document.getElementById('error');
+	var reg = /^[0-9]{11}$/;
+	
+	// 验证失败的时候触发的事件
+	tel.addEventListener('invalid',function (argument) {
+		this.setCustomValidity('亲，您输入有误哟！！！');
+	})
+
+tel.addEventListener('input',function (argument) {
+		var val = this.value;
+		if(val == ''){
+			error.innerHTML = '亲，您快输入呀！！';
+			error.style.display = 'block';
+		}else if(!reg.test(val)){
+			error.innerHTML = '亲，您的输入有误！！';
+			error.style.display = 'block';
+		}else{
+			error.innerHTML = '恭喜你，可以上车了';
+			error.style.display = 'block';
+		}
+
+	})
+
+	</script>
+</body>
+</html>

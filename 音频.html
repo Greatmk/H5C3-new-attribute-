@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<audio id="video" autoplay>
+		<source src="music/music.mp3"></source>
+		<source src="music/music.ogg"></source>
+	</audio>
+	<button id="btn">自己脑补一个漂亮的按钮</button>
+	<script type="text/javascript">
+	var btn = document.getElementById('btn');
+	var video = document.getElementById('video');
+	var flag = true;
+	btn.addEventListener('click', function (argument) {
+		// 点击按钮控制视频的暂停和播放
+		if(flag){
+			video.pause();
+			// 过河拆桥
+			flag = false;
+		}else{
+			video.play();
+			// 将桥接好
+			flag = true;
+		}
+	})
+	</script>
+</body>
+</html>

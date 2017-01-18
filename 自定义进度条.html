@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 40px;
+			border: 1px solid #000;
+		}
+		.slide{
+			width: 10px;
+			height: 40px;
+			background-color: yellowgreen;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="slide"></div>
+	</div>
+	<input class="range" type="range" min="0" max="500" value="0">
+	<script type="text/javascript">
+	var range = document.querySelector('input[type=range]');
+	var slide = document.querySelector('.slide');
+
+	range.addEventListener('input', function (argument) {
+		slide.style.width = this.value + 'px';
+	})
+	</script>
+</body>
+</html>
